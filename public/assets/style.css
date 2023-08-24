@@ -1,0 +1,129 @@
+:root {
+    --primary-teal: #3AAFA9;
+    --dark-teal: #2C7B7A;
+    --primary-yellow: #FFD166;
+    --dark-yellow: #CCAA4F;
+    --cream: #F4ECE1;
+    --charcoal: #333333;
+    --rust-orange: #D1495B;
+    --darker-rust-orange: #A13745;
+    --olive-green: #808F85;
+    --dark-gray: #555555;
+    --action-color: #2C7B7A;
+    --blue: #3E92CC;
+    --darker-blue: #306B99;
+}
+
+body {
+    background-color: var(--cream);
+    color: var(--charcoal);
+}
+
+a {
+ color: var(--rust-orange);
+}
+
+.button-orange {
+    background-color: var(--rust-orange);
+    color: white;
+}
+
+.button-orange:hover {
+    background-color: var(--darker-rust-orange);
+}
+
+.button-blue {
+    background-color: var(--blue);
+    color: white;
+}
+
+.button-blue {
+    background-color: var(--darker-blue);
+}
+
+nav {
+    border-bottom: 3px solid var(--primary-yellow);
+}
+
+.navbar {
+    background-color: var(--primary-teal);
+    font-family: 'Pridi',serif;
+    font-size: 18px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-brand {
+    font-size: 20px;
+    font-family: monospace;
+    background-color: #4e4e4e;
+    border-radius: 12px;
+    border: 1px solid var(--dark-yellow);
+}
+
+.nav-btn {
+    margin-left: 20px;
+}
+
+.btn {
+    border-radius: 0;
+}
+
+.btn-green {
+    background-color: var(--primary-teal);
+    border: none;
+}
+
+.btn-green:hover {
+    background-color: var(--dark-teal);
+}
+
+.search {
+    margin-top: 60px;
+}
+
+.blur-border {
+    border-bottom: 4px solid var(--primary-teal);
+    box-shadow: 0px 6px 10px -4px rgba(0, 0, 0, 0.4);
+}
+
+.nav-btn:hover {
+    background-color: white;
+    color: black;
+}
+
+#logout-btn:hover {
+    background-color: darkred;
+    color: white;
+}
+
+.search-box {
+    border-radius: 0;
+}
+
+.search-btn {
+    background-color: var(--primary-teal);
+    border: none;
+    font-weight: bold;
+    border-radius: 0;
+}
+
+.search-btn:hover {
+    background-color: var(--primary-yellow);
+}
+
+.search-btn:focus {
+    border-color: green;
+    box-shadow: 0 0 0 0.25rem rgba(0, 128, 0, 0.25);
+}
+
+.form-control:focus {
+    border-color: green;
+    box-shadow: 0 0 0 0.25rem rgba(0, 128, 0, 0.25);
+}
+
+.footer {
+    background-color: #75ba75;
+    font-family: 'Pridi', serif;
+    font-size: 22px;
+    color: white;
+}
