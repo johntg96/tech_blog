@@ -1,10 +1,11 @@
+
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
 const authenticateUser = require('../../middleware/authenticateUser');
 const User = require("../../models/User");
 
-// Register for the tech_blog
+// Register for the app
 router.post('/register', async (req, res) => {
   console.log("here")
   try {
@@ -26,7 +27,7 @@ router.post('/register', async (req, res) => {
   }
 });
 
-// Log in to the tech_blog
+// Log in to the app with your personal information
 router.post('/login', async (req, res) => {
   try {
     const { email, password } = req.body;

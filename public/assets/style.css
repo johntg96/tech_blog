@@ -96,28 +96,8 @@ nav {
     color: white;
 }
 
-.search-box {
-    border-radius: 0;
-}
-
-.search-btn {
-    background-color: var(--primary-teal);
-    border: none;
-    font-weight: bold;
-    border-radius: 0;
-}
-
-.search-btn:hover {
-    background-color: var(--primary-yellow);
-}
-
-.search-btn:focus {
-    border-color: green;
-    box-shadow: 0 0 0 0.25rem rgba(0, 128, 0, 0.25);
-}
-
 .form-control:focus {
-    border-color: green;
+    border-color: var(--primary-teal);
     box-shadow: 0 0 0 0.25rem rgba(0, 128, 0, 0.25);
 }
 
