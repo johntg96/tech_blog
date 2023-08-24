@@ -9,17 +9,24 @@ const User = require("../../models/User");
 router.post('/register', async (req, res) => {
   console.log("here")
   try {
-    const { email, password } = req.body;
+    const { email, password, about } = req.body;
 
     const hashedPassword = await bcrypt.hash(password, 10);
+
     const newUser = await User.create({
       email,
-      password: hashedPassword
+      password: hashedPassword,
+      about
     });
-          req.session.save(() => {
-        req.session.loggedIn = true;
-        res.status(201).json({ message: 'User registered successfully' });
-      });
+
+    req.session.save(() => {
+      req.session.loggedIn = true;
+      req.session.user = {
+        email: email,
+        about: about
+      };
+      res.status(201).json({ message: 'User registered successfully' });
+    });
     
   } catch (error) {
     console.log(error)
@@ -46,6 +53,10 @@ router.post('/login', async (req, res) => {
 
     req.session.save(() => {
       req.session.loggedIn = true;
+      req.session.user = {
+        email: user.email,
+        about: user.about
+      };
       res.json({ message: 'Login successful' })
     });
     console.log(req.session)
@@ -73,6 +84,15 @@ router.delete('/', (req, res) => {
 
 router.get('/protected', authenticateUser, (req, res) => {
   res.json({ message: 'You are an authenticated user' });
+});
+
+router.get('/profile', authenticateUser, async (req, res) => {
+  try {
+    console.log(req.session.user);
+    res.status(200).json(req.session.user);
+  } catch {
+    res.status(500).json({ message: 'Internal Server Error' });
+  }
 });
 
 router.delete('/logout', (req, res) => {

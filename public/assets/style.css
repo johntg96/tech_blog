@@ -68,18 +68,6 @@ nav {
     border-radius: 0;
 }
 
-.btn-green {
-    background-color: var(--primary-teal);
-    border: none;
-}
-
-.btn-green:hover {
-    background-color: var(--dark-teal);
-}
-
-.search {
-    margin-top: 60px;
-}
 
 .blur-border {
     border-bottom: 4px solid var(--primary-teal);
@@ -95,6 +83,29 @@ nav {
     background-color: darkred;
     color: white;
 }
+
+.blogPost-title {
+    margin-top: 60px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 26px;
+}
+
+.blogPost-text {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px
+}
+
+.blogPost-author, .blogPost-date {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: gray;
+    margin-bottom: 2px;
+}
+
+.blogPost-date {
+    margin-top: 0;
+}
+
 
 .form-control:focus {
     border-color: var(--primary-teal);

@@ -22,6 +22,10 @@ User.init(
     password: {
       type: DataTypes.STRING(255),
       allowNull: false,
+    },
+    about: {
+      type: DataTypes.STRING(1200),
+      allowNull: false,
     }
   },
   {

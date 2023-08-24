@@ -15,8 +15,10 @@ async function updateFeed() {
 
   for (blogPost of blogPosts) {
     feedPosts.append(`
-      <h3 id='blogPost-title' class='mt-5'>${blogPost.title}</h3>
-      <p id='blogPost-text'>${blogPost.body}</p>
+      <h3 class='blogPost-title' class='mt-5'>${blogPost.title}</h3>
+      <p class='blogPost-text'>${blogPost.body}</p>
+      <p class='blogPost-author'>Author: <em>${blogPost.user_email}</em></p>
+      <p class='blogPost-date'>${blogPost.create_date}</p>
     `);
   }
 }

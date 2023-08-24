@@ -6,6 +6,7 @@ function handleRegister(event) {
   const email = $('#emailField').val();
   const password = $('#passwordField').val();
   const verifyPassword = $('#passwordFieldVerify').val();
+  const about = $('#register-about-me').val();
 
   // Check if passwords match
   if (password !== verifyPassword) {
@@ -15,7 +16,7 @@ function handleRegister(event) {
 
   console.log('User sign-up request:', email, password);
 
-  const user = { email, password };
+  const user = { email, password, about };
   ////////////user sign-up post request
   fetch('/api/user/register', {
     method: 'POST',
