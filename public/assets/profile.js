@@ -9,8 +9,13 @@ async function getProfile() {
   const profileData = await response.json();
   console.log(profileData);
 
-  $('#profile-email').html(`My Email: <strong><a href='mailto:${profileData.email}'>${profileData.email}</a></strong>`);
-  $('#profile-about').html(`About Me: ${profileData.about}`);
+  $('#profile-email').html(`
+  <h4>My Email: </h4>
+    <h3>
+      <strong><a href='mailto:${profileData.email}'>${profileData.email}</a></strong>
+    </h3>
+  `);
+  $('#profile-about').html(`<h3>About Me: </h3><p>${profileData.about}</p>`);
 }
 
 getProfile();

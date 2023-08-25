@@ -15,10 +15,12 @@ async function updateFeed() {
 
   for (blogPost of blogPosts) {
     feedPosts.append(`
-      <h3 class='blogPost-title' class='mt-5'>${blogPost.title}</h3>
-      <p class='blogPost-text'>${blogPost.body}</p>
-      <p class='blogPost-author'>Author: <em>${blogPost.user_email}</em></p>
-      <p class='blogPost-date'>${blogPost.create_date}</p>
+      <div class='blogPost'>
+        <h3 class='blogPost-title' class='mt-5'>${blogPost.title}</h3>
+        <p class='blogPost-text'>${blogPost.body}</p>
+        <p class='blogPost-author'>Author: <em>${blogPost.user_email}</em></p>
+        <p class='blogPost-date'>${blogPost.create_date}</p>
+      </div>
     `);
   }
 }

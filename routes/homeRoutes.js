@@ -15,8 +15,16 @@ router.get('/profile', authenticateUser, (req, res) => {
   res.render('profile');
 });
 
+router.get('/dashboard', authenticateUser, (req, res) => {
+  res.render('dashboard');
+});
+
+router.get('/homepage', authenticateUser, (req, res) => {
+  res.render('homepage');
+});
+
 router.get('/', (req, res) => {
-  res.render('homepage')
+  res.render('landing-page');
 });
 
 module.exports = router;

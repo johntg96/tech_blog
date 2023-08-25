@@ -24,18 +24,21 @@
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <button class="btn button-blue nav-btn" id="recipes-btn" onclick="location.href='/profile'">My Profile</button>
+          <li>
+            <button class="btn button-blue nav-btn" id="dashboard-btn" onclick="location.href='/homepage'">Homepage</button>
+          </li>
+          <li>
+            <button class="btn button-blue nav-btn" id="dashboard-btn" onclick="location.href='/dashboard'">Dashboard</button>
           </li>
           <li class="nav-item">
-            <button class="btn button-orange nav-btn" id="logout-btn" onclick="logoutUser()">Logout</button>
+            <button class="btn button-blue nav-btn" id="profile-btn" onclick="location.href='/profile'">My Profile</button>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 </header>
-<body class="background-blur-image">
+<body class="min-vh-100">
   <div class="content-wrapper">
     {{{ body }}}
   </div>

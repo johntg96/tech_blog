@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Titillium+Web&display=swap');
+
 :root {
     --primary-teal: #3AAFA9;
     --dark-teal: #2C7B7A;
@@ -20,7 +22,16 @@ body {
 }
 
 a {
- color: var(--rust-orange);
+    color: var(--rust-orange);
+    font-family: 'Titillium Web', sans-serif;
+}
+
+p {
+    font-family: 'Titillium Web', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Bebas Neue', sans-serif;
 }
 
 .button-orange {
@@ -37,17 +48,27 @@ a {
     color: white;
 }
 
-.button-blue {
+.button-blue:hover {
     background-color: var(--darker-blue);
+    color: white;
+}
+
+.button-yellow {
+    background-color: var(--primary-yellow);
+}
+
+.button-yellow:hover {
+    background-color: var(--dark-yellow);
 }
 
 nav {
     border-bottom: 3px solid var(--primary-yellow);
+    margin-bottom: 80px;
 }
 
 .navbar {
     background-color: var(--primary-teal);
-    font-family: 'Pridi',serif;
+    font-family: 'Titillium Web', sans-serif;
     font-size: 18px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -58,6 +79,9 @@ nav {
     background-color: #4e4e4e;
     border-radius: 12px;
     border: 1px solid var(--dark-yellow);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .nav-btn {
@@ -67,7 +91,6 @@ nav {
 .btn {
     border-radius: 0;
 }
-
 
 .blur-border {
     border-bottom: 4px solid var(--primary-teal);
@@ -106,6 +129,9 @@ nav {
     margin-top: 0;
 }
 
+.new-post-form {
+    display: none;
+}
 
 .form-control:focus {
     border-color: var(--primary-teal);
