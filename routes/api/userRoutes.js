@@ -25,12 +25,13 @@ router.post('/register', async (req, res) => {
         email: email,
         about: about
       };
-      res.status(201).json({ message: 'User registered successfully' });
+
+      return  res.status(201).json({ message: 'User registered successfully' });
     });
     
   } catch (error) {
     console.log(error)
-    res.status(500).json({ message: 'An error occurred' });
+    return res.status(500).json({ message: 'An error occurred' });
   }
 });
 
@@ -57,28 +58,25 @@ router.post('/login', async (req, res) => {
         email: user.email,
         about: user.about
       };
-      res.json({ message: 'Login successful' })
+      return res.status(201).json({ message: 'Login successful' })
     });
-    console.log(req.session)
-;
 
   } catch (error) {
-    res.status(500).json({ message: 'An error occurred' });
+    return res.status(500).json({ message: 'An error occurred' });
   }
 });
 
 // Logout user by destroying user session
-router.delete('/', (req, res) => {
+router.delete('/', async (req, res) => {
   if (req.session) {
-    req.session.destroy(err => {
-      if (err) {
-        res.status(500).send('error logging out');
-      } else {
-        res.status(200).json({ message: 'Logout Successful!' });
-      }
-    });
+    try {
+      await req.session.destroy();
+      res.status(201).json({ message: 'Logout Successful!' });
+    } catch (err) {
+      res.status(500).send('error logging out');
+    }
   } else {
-    res.end()
+    res.end();
   }
 });
 
@@ -89,15 +87,11 @@ router.get('/protected', authenticateUser, (req, res) => {
 router.get('/profile', authenticateUser, async (req, res) => {
   try {
     console.log(req.session.user);
-    res.status(200).json(req.session.user);
+    return res.status(200).json(req.session.user);
   } catch {
-    res.status(500).json({ message: 'Internal Server Error' });
+    return res.status(500).json({ message: 'Internal Server Error' });
   }
 });
-
-router.delete('/logout', (req, res) => {
-
-})
 
 module.exports = router;
 

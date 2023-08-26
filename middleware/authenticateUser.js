@@ -6,10 +6,10 @@ const router = express.Router();
 router.use((req, res, next) => {
 
   if ( !req.session.loggedIn ) {
-    res.redirect('/login');
+    return res.redirect('/login');
   }
 
-  next()
+  return next()
   //res.status(500).json({ message: 'An internal server error occurred.' });
 });
 

@@ -6,9 +6,9 @@ const BlogPost = require('../../models/BlogPost')
 router.get('/blogPosts', async (req, res) => {
   try {
     const blogPosts = await BlogPost.findAll({})
-    res.status(200).json(blogPosts);
+    return res.status(200).json(blogPosts);
   } catch {
-    res.status(500).json({ message: 'Internal Server Error during GET /blogPosts route.' });
+    return res.status(500).json({ message: 'Internal Server Error during GET /blogPosts route.' });
   }
 });
 
@@ -20,10 +20,10 @@ router.get('/userBlogPosts', async (req, res) => {
 
     console.log('User Blog Posts:', userBlogPosts);
 
-    res.status(200).json({ data: userBlogPosts });
+    return res.status(200).json({ data: userBlogPosts });
   } catch (err) {
     console.error(err);
-    res.status(500).json({ message: 'Internal Server Error during GET /userBlogPosts route.' });
+    return res.status(500).json({ message: 'Internal Server Error during GET /userBlogPosts route.' });
   }
 });
 
@@ -44,10 +44,10 @@ router.post('/blogPosts', async (req, res) => {
       user_email: req.session.user.email,
     });
 
-    res.status(201).json({ message: 'Blog Post created successfully', data: newBlogPost });
+    return res.status(201).json({ message: 'Blog Post created successfully', data: newBlogPost });
   } catch (err) {
     console.error(err);
-    res.status(500).json({ message: 'Internal Server Error during POST /blogPosts route.'});
+    return res.status(500).json({ message: 'Internal Server Error during POST /blogPosts route.'});
   }
 });
 
