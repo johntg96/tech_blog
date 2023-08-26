@@ -1,7 +1,7 @@
 # tech_blog  
   
 ## Description  
-A website for creating blog posts centered around technology, specifically software development with an emphasis on web dev.  
+A website for creating blog posts centered around technology, specifically software development with an emphasis on web dev. Access the live application via Heroku [here](https://tech-blog-johntg96-6194751df56d.herokuapp.com/).
   
 **Features**:  
   - Login/Register pages.
