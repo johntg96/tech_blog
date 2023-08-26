@@ -144,3 +144,13 @@ nav {
     font-size: 22px;
     color: white;
 }
+
+@media (max-width: 780px) {
+    .navbar-brand {
+        width: 80%;
+    }
+
+    .nav-btn {
+        margin-top: 8px;
+    }
+}
